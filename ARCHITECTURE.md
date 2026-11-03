@@ -11,7 +11,7 @@ A browser-based, one-to-one messaging prototype. Each browser profile creates a 
 - WebRTC uses its encrypted transport. This is not yet a reviewed end-to-end identity/authentication protocol.
 - STUN is used for NAT discovery. It does not carry chat messages. Some NAT/firewall combinations will prevent direct connectivity without TURN.
 - Signaling is manual: exchange an offer package and an answer package by copy/paste. No signaling server is used.
-- Sender-side messages stay in a durable local queue until a delivery acknowledgement is received.
+- Once a peer has been added, users can compose while offline; sender-side messages stay in a durable local queue until a delivery acknowledgement is received.
 - On a newly established connection, the sender retries every message not marked delivered. The receiver deduplicates by message ID and acknowledges duplicate deliveries without creating duplicate chat bubbles.
 - After refresh or a network drop, users can create a fresh invite and repeat the manual connection exchange. The app remembers the last peer and local conversation.
 
